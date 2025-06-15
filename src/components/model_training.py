@@ -96,6 +96,7 @@ class ModelTrainer:
                 list(model_report.values()).index(best_model_score)
             ]
             best_model = models[best_model_name]
+            
 
             if best_model_score<0.6:
                 raise CustomException("No best model found")
@@ -109,7 +110,8 @@ class ModelTrainer:
             predicted=best_model.predict(X_test)
 
             r2_square = r2_score(y_test, predicted)
-            return r2_square
+            return r2_square,best_model_name
+            
             
 
 

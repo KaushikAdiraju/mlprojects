@@ -5,7 +5,8 @@ from src.logging import logging
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
-
+from data_transformation import DataTransformation
+from model_training import ModelTrainer
 @dataclass
 class DataIngestionConfig:
     train_data_path: str=os.path.join('artifacts',"train.csv")  #the resultant path would be artifacts/train.csv
@@ -41,5 +42,9 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e,sys)
 obj1 = DataIngestion()
-obj1.initiate_data_ingestion()
+train_data,test_data=obj1.initiate_data_ingestion()
 #after this step the data is stored in this format
+data_transformation = DataTransformation()
+train_arr,test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+modeltrainer = ModelTrainer()
+print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
