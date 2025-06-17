@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Mark Predictor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(270deg,
+        #a18cd1, /* Soft Violet */
+        #8e9eab, /* Indigo Grey */
+        #7f7fd5, /* Blue */
+        #8fd3f4, /* Light Blue/Green */
+        #fceabb, /* Soft Yellow */
+        #f8b500, /* Soft Orange */
+        #f88f70  /* Soft Red */
+      );
+      background-size: 1600% 1600%;
+      animation: vibgyorFlow 25s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    @keyframes vibgyorFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 60px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      color: #f0f0f0;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .title {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: rgba(240,240,240,0.85);
+    }
+
+    .btn {
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #fff;
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Student Mark Predictor</div>
+    <div class="subtitle">Unlock academic insights with a touch of AI – Predict student performance smarter and better</div>
+    <button class="btn" onclick="getStarted()">🚀 Get Started</button>
+    <div class="footer">Crafted with ✨ for future thinkers</div>
+  </div>
+
+  <script>
+    function getStarted() {
+      window.location.href = "predict.html"; // Replace this with your prediction page
+    }
+  </script>
+</body>
+</html>
