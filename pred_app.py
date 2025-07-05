@@ -53,5 +53,5 @@ def predict():
             return f"An error occurred: {e}", 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80, debug=True)
-    predict()
+    app.run(host="0.0.0.0")
+    
